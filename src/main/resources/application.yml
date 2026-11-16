@@ -1,0 +1,31 @@
+server:
+  port: ${SERVER_PORT:8070}
+  address: ${SERVER_ADDRESS:127.0.0.1}
+spring:
+  servlet:
+    multipart:
+      max-file-size: 8MB
+      max-request-size: 9MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL:jdbc:mysql://localhost:3306/wechat_app?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+aliyun:
+  oss:
+    endpoint: ${OSS_ENDPOINT:https://oss-cn-hangzhou.aliyuncs.com}
+    accessKeyId: ${OSS_ACCESS_KEY_ID:not-configured}
+    accessKeySecret: ${OSS_ACCESS_KEY_SECRET:not-configured}
+    bucketName: ${OSS_BUCKET:not-configured}
+    urlPrefix: ${OSS_URL_PREFIX:}
+    avatarDir: avatars/
+upload:
+  avatar:
+    dir: ./uploads/avatars
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+inference:
+  base-url: ${INFERENCE_BASE_URL:http://127.0.0.1:5000}
+app:
+  public-base-url: ${PUBLIC_BASE_URL:http://localhost:8070}

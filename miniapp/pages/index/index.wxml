@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="header">
+    <text class="title">飞蛾害虫识别系统</text>
+  </view>
+
+  <view class="user-section">
+    <block wx:if="{{hasUserInfo}}">
+      <view class="user-info">
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+        <text class="nickname">欢迎，{{userInfo.nickname}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <button class="login-btn" bindtap="goToLogin">登录</button>
+      <!-- <text class="login-tip">登录后可使用全部功能</text> -->
+    </block>
+  </view>
+
+  <view class="action-area">
+    <button class="action-btn" bindtap="clickme">开始识别</button>
+    <button class="action-btn" bindtap="history">历史记录</button>
+    <button class="action-btn" bindtap="mothInfo">飞蛾相关</button>
+    <!-- <button class="action-btn" bindtap="test">test</button> -->
+  </view>
+
+
+
+  <view class="info-section">
+    <view class="section-header">
+      <text class="section-title">使用说明</text>
+    </view>
+    <view class="section-content">
+      <text class="info-item">1. 点击"开始识别"上传飞蛾害虫图片</text>
+      <text class="info-item">2. 系统将自动识别图片中的飞蛾害虫</text>
+      <text class="info-item">3. 识别结果保存，可在"历史记录"中查看</text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text>飞蛾害虫识别系统 v1.0</text>
+  </view>
+</view>

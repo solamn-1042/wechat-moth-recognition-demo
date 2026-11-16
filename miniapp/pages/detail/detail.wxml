@@ -1,0 +1,33 @@
+<!-- pages/detail/detail.wxml -->
+<view class="container">
+  <view class="detail-card">
+    <view class="detail-header">
+      <text class="detail-title">识别详情</text>
+    </view>
+
+    <view class="image-container">
+      <image class="full-image" src="{{record.resultImgPath}}" mode="widthFix"></image>
+    </view>
+
+    <view class="detail-info">
+      <view class="info-item">
+        <text class="info-label">飞蛾类型:</text>
+        <text class="info-value">{{record.mothType || '未识别'}}</text>
+      </view>
+      
+      <view class="info-item" wx:if="{{record.confidence}}">
+        <text class="info-label">置信度:</text>
+        <text class="info-value">{{record.confidence * 100}}%</text>
+      </view>
+      
+      <view class="info-item">
+        <text class="info-label">识别时间:</text>
+        <text class="info-value">{{record.formattedTime}}</text>
+      </view>
+    </view>
+    
+    <view class="action-buttons">
+      <button class="action-btn" bindtap="goBack">返回</button>
+    </view>
+  </view>
+</view>

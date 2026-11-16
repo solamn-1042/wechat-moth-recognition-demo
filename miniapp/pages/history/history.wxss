@@ -1,0 +1,179 @@
+/* pages/history/history.wxss */
+.container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f6f9f8, #e9f3ef);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 30rpx;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    width: 100%;
+    padding: 60rpx 0 24rpx 0;
+    background: #4fc08d;
+    text-align: center;
+    border-radius: 0 0 32rpx 32rpx;
+    margin-bottom: 40rpx;
+    box-shadow: 0 4rpx 20rpx rgba(79, 192, 141, 0.3);
+  }
+  
+  .title {
+    font-size: 44rpx;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2rpx;
+    text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 登录提示样式 */
+  .login-tip {
+    width: 90%;
+    background: #fff;
+    border-radius: 24rpx;
+    margin: 40rpx 0;
+    padding: 60rpx 40rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.06);
+  }
+  
+  .login-icon {
+    width: 200rpx;
+    height: 200rpx;
+    margin-bottom: 30rpx;
+  }
+  
+  .login-icon image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .login-text {
+    font-size: 32rpx;
+    color: #666;
+    margin-bottom: 40rpx;
+    text-align: center;
+  }
+  
+  .login-btn {
+    background: #4fc08d;
+    color: #fff;
+    padding: 20rpx 60rpx;
+    width: 70%;
+    border-radius: 45rpx;
+    font-size: 30rpx;
+    box-shadow: 0 6rpx 12rpx rgba(79, 192, 141, 0.2);
+  }
+  
+  /* 记录列表样式 */
+  .record-list {
+    width: 100%;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+  }
+  
+  .record-item {
+    background: #fff;
+    border-radius: 24rpx;
+    margin-bottom: 24rpx;
+    overflow: hidden;
+    box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.06);
+  }
+  
+  .record-content {
+    display: flex;
+    align-items: center;
+    padding: 24rpx;
+  }
+  
+  .record-image-container {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 12rpx;
+    overflow: hidden;
+    margin-right: 24rpx;
+    background-color: #f0f0f0;
+  }
+  
+  .record-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .record-info {
+    flex: 1;
+  }
+  
+  .record-title {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10rpx;
+  }
+  
+  .record-confidence {
+    font-size: 26rpx;
+    color: #4fc08d;
+    margin-bottom: 8rpx;
+  }
+  
+  .record-time {
+    font-size: 24rpx;
+    color: #999;
+  }
+  
+  .record-arrow {
+    margin-left: 16rpx;
+    color: #ccc;
+    font-size: 36rpx;
+  }
+  
+  .loading-more {
+    text-align: center;
+    padding: 30rpx 0;
+  }
+  
+  .loading-text {
+    font-size: 28rpx;
+    color: #4fc08d;
+  }
+  
+  .no-more {
+    text-align: center;
+    padding: 30rpx 0;
+    font-size: 28rpx;
+    color: #999;
+  }
+  
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120rpx 0;
+  }
+  
+  .empty-image {
+    width: 240rpx;
+    height: 240rpx;
+    margin-bottom: 40rpx;
+  }
+  
+  .empty-text {
+    font-size: 30rpx;
+    color: #999;
+    margin-bottom: 40rpx;
+  }
+  
+  .go-upload-btn {
+    background: #4fc08d;
+    color: #fff;
+    padding: 20rpx 60rpx;
+    border-radius: 45rpx;
+    font-size: 30rpx;
+    box-shadow: 0 6rpx 12rpx rgba(79, 192, 141, 0.2);
+  }

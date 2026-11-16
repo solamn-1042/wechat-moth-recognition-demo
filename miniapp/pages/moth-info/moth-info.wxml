@@ -1,0 +1,568 @@
+<view class="container">
+  <view class="decorative-circle circle-1"></view>
+  <view class="decorative-circle circle-2"></view>
+
+  <view class="header">
+    <text class="title">飞蛾相关知识</text>
+  </view>
+
+  <view class="content-container">
+    <!-- 顶部导航选项卡 -->
+    <scroll-view scroll-x="true" class="nav-tabs">
+      <view 
+        class="tab-item {{currentTab === 0 ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-index="0">
+        草地贪夜蛾
+      </view>
+      <view 
+        class="tab-item {{currentTab === 1 ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-index="1">
+        斜纹夜蛾
+      </view>
+      <view 
+        class="tab-item {{currentTab === 2 ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-index="2">
+        甜菜夜蛾
+      </view>
+      <view 
+        class="tab-item {{currentTab === 3 ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-index="3">
+        劳氏粘虫
+      </view>
+      <view 
+        class="tab-item {{currentTab === 4 ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-index="4">
+        黄地老虎
+      </view>
+    </scroll-view>
+
+    <!-- 内容区域 -->
+    <swiper class="content-swiper" current="{{currentTab}}" bindchange="swiperChange">
+      <!-- 草地贪夜蛾 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scroll-content">
+          <view class="moth-banner">
+            <image src="/pages/data/spodoptera_frugiperda.jpg" mode="aspectFill" class="moth-banner-image"></image>
+            <view class="moth-banner-text">
+              <text class="moth-name">草地贪夜蛾</text>
+              <text class="moth-scientific">Spodoptera frugiperda</text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🔍</text>
+              <text class="header-text">基本特征</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                草地贪夜蛾是鳞翅目夜蛾科的一种害虫，成虫体长约15-20mm，翅展30-40mm。前翅为灰褐色，有不规则的白色和黑色斑点，后翅为灰白色，边缘有暗色条纹。
+              </text>
+              <text class="info-text">
+                幼虫体色随龄期变化，初龄为绿色，后变为棕色或黑色，头部有明显的倒"Y"形纹。幼虫体长可达40mm，末龄幼虫有明显的四个黑点排列成梯形。
+              </text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">⚠️</text>
+              <text class="header-text">危害方式</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                草地贪夜蛾主要危害禾本科植物，尤其是玉米、水稻、高粱等作物，也会危害棉花、大豆等多种农作物。
+              </text>
+              <text class="info-text">
+                初龄幼虫啃食叶片表皮，造成透明的"窗孔"状;高龄幼虫可钻入心叶危害，造成"枯心"症状，还会钻入穗部危害，导致减产甚至绝收。
+              </text>
+
+              <view class="stats-container">
+                <view class="stat-item">
+                  <view class="stat-value">200+</view>
+                  <view class="stat-label">寄主植物种类</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">30-40%</view>
+                  <view class="stat-label">可造成减产率</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">12-14天</view>
+                  <view class="stat-label">生活周期</view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🛡️</text>
+              <text class="header-text">防控措施</text>
+            </view>
+            <view class="card-content">
+              <view class="method-item">
+                <text class="method-title">农业防治</text>
+                <text class="info-text">• 深耕灭茬，冬季翻土，销毁田间残株</text>
+                <text class="info-text">• 合理轮作，避免连作</text>
+                <text class="info-text">• 选用抗性品种</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">生物防治</text>
+                <text class="info-text">• 释放赤眼蜂、捕食性天敌</text>
+                <text class="info-text">• 使用苏云金杆菌等微生物农药</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">化学防治</text>
+                <text class="info-text">• 使用氯虫苯甲酰胺、乙基多杀菌素等高效低毒农药</text>
+                <text class="info-text">• 采取轮换用药策略，避免抗药性产生</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">📊</text>
+              <text class="header-text">分布与迁飞</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                草地贪夜蛾原产于美洲热带和亚热带地区，目前已在全球80多个国家和地区发现。它具有强大的迁飞能力，成虫一晚可迁飞100公里以上，有记录显示其可连续飞行超过1500公里。
+              </text>
+              <text class="info-text">
+                2018年首次在中国发现，随后迅速向全国蔓延。在我国南方可周年繁殖，北方地区则表现为季节性迁入。
+              </text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 斜纹夜蛾 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scroll-content">
+          <view class="moth-banner">
+            <image src="/pages/data/spodoptera_litura.jpg" mode="aspectFill" class="moth-banner-image"></image>
+            <view class="moth-banner-text">
+              <text class="moth-name">斜纹夜蛾</text>
+              <text class="moth-scientific">Spodoptera litura</text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🔍</text>
+              <text class="header-text">基本特征</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                斜纹夜蛾成虫体长15-18mm，翅展35-38mm。前翅暗褐色，有特征性的白色斜纹，后翅呈灰白色，边缘灰褐色。
+              </text>
+              <text class="info-text">
+                幼虫体色多变，初龄为绿色，后变为黑褐色，背部有特征性的黑色半月形和三角形斑纹，体侧有黄色纵带。
+              </text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">⚠️</text>
+              <text class="header-text">危害方式</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                斜纹夜蛾是一种食性极广的杂食性害虫，可危害蔬菜、棉花、玉米、大豆、烟草等近100种农作物。
+              </text>
+              <text class="info-text">
+                低龄幼虫群集取食叶肉，留下表皮；高龄幼虫分散活动，贪食植物叶片，严重时可将整株植物叶片吃光，造成"秃杆"现象。
+              </text>
+
+              <view class="stats-container">
+                <view class="stat-item">
+                  <view class="stat-value">100+</view>
+                  <view class="stat-label">寄主植物种类</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">20-50%</view>
+                  <view class="stat-label">可造成减产率</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">30天</view>
+                  <view class="stat-label">生活周期</view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🛡️</text>
+              <text class="header-text">防控措施</text>
+            </view>
+            <view class="card-content">
+              <view class="method-item">
+                <text class="method-title">生态调控</text>
+                <text class="info-text">• 清洁田园，消灭杂草和作物残体</text>
+                <text class="info-text">• 深耕晒垡，消灭土中越冬虫蛹</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">生物防治</text>
+                <text class="info-text">• 利用天敌如寄生蜂、草蛉、瓢虫等</text>
+                <text class="info-text">• 应用核型多角体病毒制剂</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">物理防治</text>
+                <text class="info-text">• 设置频振式杀虫灯诱杀成虫</text>
+                <text class="info-text">• 使用性信息素诱杀雄蛾</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🔬</text>
+              <text class="header-text">生活习性</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                斜纹夜蛾在中国大多数地区一年发生6-8代，南方可达10代。成虫在夜间活动，白天隐藏在农作物叶背或土缝中。
+              </text>
+              <text class="info-text">
+                成虫羽化后1-2日交尾，2-3日开始产卵，卵产在叶背，并覆盖鳞毛。卵经3-5天孵化，幼虫期15-20天，蛹期7-10天。
+              </text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 甜菜夜蛾 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scroll-content">
+          <view class="moth-banner">
+            <image src="/pages/data/spodoptera_exigua.jpg" mode="aspectFill" class="moth-banner-image"></image>
+            <view class="moth-banner-text">
+              <text class="moth-name">甜菜夜蛾</text>
+              <text class="moth-scientific">Spodoptera exigua</text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🔍</text>
+              <text class="header-text">基本特征</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                甜菜夜蛾成虫体小，体长10-12mm，翅展25-30mm。前翅灰褐色，有圆形和肾形斑，后翅白色半透明，边缘有褐色窄边。
+              </text>
+              <text class="info-text">
+                幼虫体色随龄期变化，初龄淡绿色，后期呈绿色、褐色或黑色，体侧有1条淡色纵带，第1、8腹节背部各有1个黑色小点。
+              </text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">⚠️</text>
+              <text class="header-text">危害方式</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                甜菜夜蛾食性极广，可危害蔬菜、棉花、大豆、花生、甜菜等40多种农作物及经济作物。
+              </text>
+              <text class="info-text">
+                低龄幼虫群集取食叶肉，高龄幼虫昼夜取食，能将植株叶片、花蕾、幼果等全部吃光。在棉花上主要为害嫩叶、幼蕾和幼铃。
+              </text>
+
+              <view class="stats-container">
+                <view class="stat-item">
+                  <view class="stat-value">40+</view>
+                  <view class="stat-label">寄主植物种类</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">30-40%</view>
+                  <view class="stat-label">可造成减产率</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">24-36天</view>
+                  <view class="stat-label">生活周期</view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🛡️</text>
+              <text class="header-text">防控措施</text>
+            </view>
+            <view class="card-content">
+              <view class="method-item">
+                <text class="method-title">监测预警</text>
+                <text class="info-text">• 使用性诱剂进行成虫监测</text>
+                <text class="info-text">• 定期田间调查，掌握虫情动态</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">农业防治</text>
+                <text class="info-text">• 合理轮作，减少虫源</text>
+                <text class="info-text">• 中耕除草，破坏虫体栖息环境</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">生物防治</text>
+                <text class="info-text">• 保护和利用天敌如寄生蜂、瓢虫等</text>
+                <text class="info-text">• 使用苏云金杆菌等微生物农药</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">📝</text>
+              <text class="header-text">历史溯源</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                甜菜夜蛾原产于亚洲，现已广泛分布于世界各大洲。在中国各地均有分布，以长江流域及其以南地区较为普遍。
+              </text>
+              <text class="info-text">
+                该虫曾在中国多次暴发成灾，1985年、1992年和2012年的大发生都造成了严重的经济损失。随着全球气候变暖，其危害趋势有所加重。
+              </text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 劳氏粘虫 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scroll-content">
+          <view class="moth-banner">
+            <image src="/pages/data/leucania_loreyi.jpg" mode="aspectFill" class="moth-banner-image"></image>
+            <view class="moth-banner-text">
+              <text class="moth-name">劳氏粘虫</text>
+              <text class="moth-scientific">Leucania loreyi</text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🔍</text>
+              <text class="header-text">基本特征</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                劳氏粘虫成虫体长15-18mm，翅展35-40mm。前翅黄褐色至灰褐色，有细小黑点散布，沿翅脉有不明显的暗色纹；后翅白色半透明，边缘有细小的黑褐色边缘。
+              </text>
+              <text class="info-text">
+                幼虫体色随龄期变化，通常为黄绿色或灰褐色，背部有3条淡黄色纵纹，体侧各有1条宽而明显的黑褐色纵带。
+              </text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">⚠️</text>
+              <text class="header-text">危害方式</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                劳氏粘虫主要危害禾本科作物，如玉米、水稻、小麦、高粱等，也会危害甘蔗和多种牧草。
+              </text>
+              <text class="info-text">
+                幼虫通常在夜间活动，白天隐藏在叶鞘内或土中。它们主要取食叶片，形成不规则的缺刻，严重时可将叶片吃成残缺不全。在水稻、玉米上常造成"缺刻食痕"，影响光合作用和产量。
+              </text>
+
+              <view class="stats-container">
+                <view class="stat-item">
+                  <view class="stat-value">15+</view>
+                  <view class="stat-label">寄主植物种类</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">10-25%</view>
+                  <view class="stat-label">可造成减产率</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">35-45天</view>
+                  <view class="stat-label">生活周期</view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🛡️</text>
+              <text class="header-text">防控措施</text>
+            </view>
+            <view class="card-content">
+              <view class="method-item">
+                <text class="method-title">农业防治</text>
+                <text class="info-text">• 适时耕翻土地，破坏越冬场所</text>
+                <text class="info-text">• 清除田间杂草，减少替代寄主</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">物理防治</text>
+                <text class="info-text">• 设置黑光灯诱杀成虫</text>
+                <text class="info-text">• 早晚人工捕杀幼虫</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">化学防治</text>
+                <text class="info-text">• 在幼虫低龄期喷施农药效果较好</text>
+                <text class="info-text">• 可选用氯虫苯甲酰胺、茚虫威等药剂</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🌍</text>
+              <text class="header-text">分布与生态习性</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                劳氏粘虫广泛分布于亚洲、非洲和大洋洲的热带和亚热带地区。在中国主要分布于南方各省区，华北、东北地区也有发现。
+              </text>
+              <text class="info-text">
+                一年可发生3-4代，以蛹在土中越冬。成虫夜间活动，白天隐藏；卵期3-5天，幼虫期18-25天，蛹期10-15天。
+              </text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 黄地老虎 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scroll-content">
+          <view class="moth-banner">
+            <image src="/pages/data/agrotis_segetum.jpg" mode="aspectFill" class="moth-banner-image"></image>
+            <view class="moth-banner-text">
+              <text class="moth-name">黄地老虎</text>
+              <text class="moth-scientific">Agrotis segetum</text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🔍</text>
+              <text class="header-text">基本特征</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                黄地老虎成虫体长15-20mm，翅展35-45mm。前翅灰褐色或黄褐色，有显著的圆形斑和肾形斑；后翅雄性乳白色，雌性灰褐色。
+              </text>
+              <text class="info-text">
+                幼虫肥大，体长可达45-50mm，体色灰褐色或暗灰色，表面光滑，无明显毛，背面有不明显的纵线。当受到惊扰时，幼虫会卷缩成"C"形，这是其重要的识别特征。
+              </text>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">⚠️</text>
+              <text class="header-text">危害方式</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                黄地老虎是一种重要的地下害虫，幼虫栖息于土中或土表，主要危害作物的地下部分及近地面的茎秆部位。
+              </text>
+              <text class="info-text">
+                幼虫咬断幼苗根颈或钻入块根、块茎、地下茎等部位取食，造成植株萎蔫、倒伏甚至死亡。主要危害作物包括棉花、玉米、大豆、花生、马铃薯、甜菜、蔬菜等。
+              </text>
+
+              <view class="stats-container">
+                <view class="stat-item">
+                  <view class="stat-value">150+</view>
+                  <view class="stat-label">寄主植物种类</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">30-70%</view>
+                  <view class="stat-label">可造成减产率</view>
+                </view>
+                <view class="stat-item">
+                  <view class="stat-value">50-70天</view>
+                  <view class="stat-label">生活周期</view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🛡️</text>
+              <text class="header-text">防控措施</text>
+            </view>
+            <view class="card-content">
+              <view class="method-item">
+                <text class="method-title">农业防治</text>
+                <text class="info-text">• 深翻晒土，消灭土中越冬虫态</text>
+                <text class="info-text">• 适时灌水，淹死土中幼虫</text>
+                <text class="info-text">• 合理轮作，避免连作敏感作物</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">物理防治</text>
+                <text class="info-text">• 设置黑光灯或性诱剂诱杀成虫</text>
+                <text class="info-text">• 在幼虫高发期在田间放置毒饵</text>
+              </view>
+
+              <view class="method-item">
+                <text class="method-title">化学防治</text>
+                <text class="info-text">• 使用毒土或毒饵灭幼虫</text>
+                <text class="info-text">• 喷施阿维菌素、甲维盐等药剂</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="info-card">
+            <view class="card-header">
+              <text class="icon">🔄</text>
+              <text class="header-text">生活习性</text>
+            </view>
+            <view class="card-content">
+              <text class="info-text">
+                黄地老虎在北方地区一年发生2-3代，南方地区可达4-5代。以老熟幼虫或蛹在土中越冬。
+              </text>
+              <text class="info-text">
+                成虫夜间活动，白天隐蔽；雌蛾产卵于寄主植物基部或附近的土壤表面。卵期4-10天，幼虫期25-40天，蛹期15-20天。
+              </text>
+              <text class="info-text">
+                幼虫昼伏夜出，日间隐藏在土中，夜间出土取食，晴朗干燥天气不利于其生存和繁殖。
+              </text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="quick-facts">
+    <text class="quick-facts-title">快速了解</text>
+    <view class="quick-fact-item">
+      <text class="quick-fact-icon">🔖</text>
+      <text class="quick-fact-text">夜蛾科是农业上最具破坏性的害虫群体之一</text>
+    </view>
+    <view class="quick-fact-item">
+      <text class="quick-fact-icon">🌱</text>
+      <text class="quick-fact-text">这些飞蛾幼虫都具有极强的适应性和繁殖力</text>
+    </view>
+    <view class="quick-fact-item">
+      <text class="quick-fact-icon">🔄</text>
+      <text class="quick-fact-text">综合防治是控制这类害虫最有效的策略</text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text class="footer-text">草地贪夜蛾识别系统 v1.0</text>
+    <text class="footer-copyright">© 2025 农业害虫识别与防控</text>
+  </view>
+</view>

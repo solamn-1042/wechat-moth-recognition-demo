@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-16",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "cpu",
+  "classes": {
+    "0": "Agrotis segetum",
+    "1": "Leucania loreyi",
+    "2": "Spodoptera exigua",
+    "3": "Spodoptera frugiperda",
+    "4": "Spodoptera litura"
+  },
+  "model_load_ms": 125.07,
+  "samples": [
+    {
+      "image": "agrotis_segetum.jpg",
+      "elapsed_ms": 6155.18,
+      "detections": [
+        {
+          "class": "黄地老虎",
+          "confidence": 0.8146923184394836
+        }
+      ],
+      "result_image_download": true
+    },
+    {
+      "image": "leucania_loreyi.jpg",
+      "elapsed_ms": 184.92,
+      "detections": [
+        {
+          "class": "劳氏粘虫",
+          "confidence": 0.9029391407966614
+        }
+      ],
+      "result_image_download": true
+    },
+    {
+      "image": "spodoptera_exigua.jpg",
+      "elapsed_ms": 324.57,
+      "detections": [
+        {
+          "class": "甜菜夜蛾",
+          "confidence": 0.8935632109642029
+        }
+      ],
+      "result_image_download": true
+    },
+    {
+      "image": "spodoptera_frugiperda.jpg",
+      "elapsed_ms": 341.75,
+      "detections": [
+        {
+          "class": "草地贪夜蛾",
+          "confidence": 0.8630468249320984
+        }
+      ],
+      "result_image_download": true
+    },
+    {
+      "image": "spodoptera_litura.jpg",
+      "elapsed_ms": 374.73,
+      "detections": [
+        {
+          "class": "斜纹夜蛾",
+          "confidence": 0.9019555449485779
+        }
+      ],
+      "result_image_download": true
+    }
+  ],
+  "scope": "Five app illustrations; HTTP test client plus real checkpoint, not accuracy benchmark or full three-service end-to-end test.",
+  "parameters_before_fusion": 2590815,
+  "parameters_after_fusion": 2583127
+}

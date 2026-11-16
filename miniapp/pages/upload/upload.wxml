@@ -1,0 +1,60 @@
+<!--pages/upload/upload.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">草地贪夜蛾识别</text>
+  </view>
+
+  <view class="image-container">
+    <image class="preview-image" wx:if="{{imageList}}" src="{{imageList}}" bindtap="uploadImage" mode="aspectFit"></image>
+  </view>
+  
+  <view class="button-container">
+    <button class="upload-btn" bindtap="uploadImage">选择图片</button>
+    <button class="submit-btn" bindtap="request" loading="{{isLoading}}">开始识别</button>
+  </view>
+
+  <!-- 检测结果显示区域 -->
+  <view class="results-container" wx:if="{{showResult && mainDetection}}">
+    <view class="result-header">
+      <text class="result-title">识别结果</text>
+    </view>
+    
+    <!-- 主要检测结果 -->
+    <view class="main-result">
+      <view class="result-item">
+        <text class="label">飞蛾种类:</text>
+        <text class="value">{{mainDetection.class}}</text>
+      </view>
+      
+      <view class="result-item">
+        <text class="label">置信度:</text>
+        <text class="value">{{mainDetection.confidencePercent}}</text>
+      </view>
+      
+      <view class="confidence-bar">
+        <view class="bar-fill {{mainDetection.widthClass}}" style="width:{{mainDetection.confidencePercent}}"></view>
+      </view>
+    </view>
+    
+    <!-- 其他检测结果 -->
+    <block wx:if="{{detections.length > 1}}">
+      <view class="other-results">
+        <view class="other-header">其他可能的结果</view>
+        
+        <view class="other-list">
+          <view wx:for="{{detections}}" wx:key="index" class="other-item" 
+                wx:if="{{item.class !== mainDetection.class}}">
+            <view class="other-info">
+              <text class="other-name">{{item.class}}</text>
+              <text class="other-confidence">{{item.confidencePercent}}</text>
+            </view>
+            
+            <view class="confidence-bar small">
+              <view class="bar-fill" style="width:{{item.confidencePercent}}"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

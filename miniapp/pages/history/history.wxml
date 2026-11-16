@@ -1,0 +1,52 @@
+<!-- pages/history/history.wxml -->
+<view class="container">
+  <view class="header">
+    <text class="title">识别历史记录</text>
+  </view>
+
+  <!-- 登录提示 -->
+  <view class="login-tip" wx:if="{{!isLoggedIn}}">
+    <view class="login-icon">
+      <!-- <image src="/pages/data/login.png" mode="aspectFit"></image> -->
+    </view>
+    <view class="login-text">登录后可以使用历史记录功能</view>
+    <button class="login-btn" bindtap="goToLogin">立即登录</button>
+  </view>
+
+  <!-- 记录列表 -->
+  <view class="record-list" wx:if="{{isLoggedIn}}">
+    <block wx:if="{{records.length > 0}}">
+      <view class="record-item" wx:for="{{records}}" wx:key="id">
+        <view class="record-content" bindtap="viewDetail" data-record="{{item}}">
+          <view class="record-image-container">
+            <image class="record-image" src="{{item.resultImgPath}}" mode="aspectFill"></image>
+          </view>
+          
+          <view class="record-info">
+            <view class="record-title">{{item.mothType || '未识别'}}</view>
+            <view class="record-confidence" wx:if="{{item.confidence}}">置信度: {{item.confidence * 100}}{{"%"}}</view>
+            <view class="record-time">{{formatTime(item.createTime)}}</view>
+          </view>
+          
+          <view class="record-arrow">
+            <text class="icon">></text>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 加载更多 -->
+      <view class="loading-more" wx:if="{{hasMore}}">
+        <view class="loading-text" bindtap="loadMore">加载更多</view>
+      </view>
+      <view class="no-more" wx:else>
+        <text>没有更多数据了</text>
+      </view>
+    </block>
+    
+    <view class="empty-state" wx:else>
+      <image class="empty-image" src="/pages/data/empty.jpg"></image>
+      <text class="empty-text">暂无历史记录</text>
+      <button class="go-upload-btn" bindtap="goToUpload">去识别飞蛾</button>
+    </view>
+  </view>
+</view>

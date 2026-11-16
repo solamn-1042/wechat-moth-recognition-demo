@@ -1,0 +1,25 @@
+name: verify
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - run: mvn -B test
+        env:
+          JWT_SECRET: ci-only-test-key-with-at-least-32-bytes
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Flask==3.1.2 pillow numpy
+      - run: python -m unittest -v test_app
+        working-directory: inference
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: find miniapp -name '*.js' -print0 | xargs -0 -n1 node --check

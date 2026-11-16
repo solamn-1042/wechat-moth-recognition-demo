@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="header">
+    <text class="title">用户注册</text>
+  </view>
+
+  <!-- 装饰元素 -->
+  <view class="decorative-circle circle-1"></view>
+  <view class="decorative-circle circle-2"></view>
+
+  <view class="register-form">
+    <view class="form-group">
+      <text class="label">用户名</text>
+      <input class="input" type="text" placeholder="请输入用户名" bindinput="inputUsername" value="{{username}}"/>
+    </view>
+    
+    <view class="form-group">
+      <text class="label">密码</text>
+      <input class="input" type="password" placeholder="请设置密码" bindinput="inputPassword" value="{{password}}"/>
+    </view>
+    
+    <view class="form-group">
+      <text class="label">确认密码</text>
+      <input class="input" type="password" placeholder="请再次输入密码" bindinput="inputConfirmPassword" value="{{confirmPassword}}"/>
+    </view>
+    
+    <view class="form-group">
+      <text class="label">昵称 (选填)</text>
+      <input class="input" type="text" placeholder="请输入昵称" bindinput="inputNickname" value="{{nickname}}"/>
+    </view>
+    
+    <view class="buttons">
+      <button class="submit-btn" bindtap="register">注册</button>
+      <button class="login-btn" bindtap="goToLogin">返回登录</button>
+    </view>
+  </view>
+</view>

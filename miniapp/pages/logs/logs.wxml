@@ -1,0 +1,108 @@
+<view class="container">
+  <view class="header">
+    <text class="title">个人中心</text>
+  </view>
+
+  <!-- 装饰元素 -->
+  <view class="decorative-circle circle-1"></view>
+  <view class="decorative-circle circle-2"></view>
+
+  <!-- 未登录状态显示 -->
+  <view class="login-container" wx:if="{{!userInfo}}">
+    <view class="login-prompt">
+      <text class="login-text">请登录后查看个人信息</text>
+      <button class="submit-btn" bindtap="goToLogin">立即登录</button>
+    </view>
+  </view>
+
+  <!-- 已登录状态显示 -->
+  <view class="user-container" wx:if="{{userInfo}}">
+    <!-- 用户信息卡片 -->
+    <view class="user-card">
+      <view class="avatar-container" bindtap="chooseAvatar">
+        <image class="avatar" src="{{userInfo.avatarUrl || 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'}}"></image>
+        <view class="avatar-edit">
+          <text class="avatar-edit-text">更换头像</text>
+        </view>
+      </view>
+      
+      <view class="user-info">
+        <text class="nickname">{{userInfo.nickname || userInfo.username}}</text>
+        <text class="username">用户名: {{userInfo.username}}</text>
+      </view>
+    </view>
+    
+    <!-- 功能菜单 -->
+    <view class="menu-list">
+      <view class="menu-item" bindtap="showEditProfile">
+        <text class="menu-text">编辑个人资料</text>
+        <text class="menu-arrow">></text>
+      </view>
+      
+      <view class="menu-item" bindtap="goToHistory">
+        <text class="menu-text">历史鉴别记录</text>
+        <text class="menu-arrow">></text>
+      </view>
+      
+      <view class="menu-item" bindtap="showChangePassword">
+        <text class="menu-text">修改密码</text>
+        <text class="menu-arrow">></text>
+      </view>
+    </view>
+    
+    <!-- 退出登录按钮 -->
+    <view class="buttons">
+      <button class="logout-btn" bindtap="logout">退出登录</button>
+    </view>
+  </view>
+  
+  <!-- 编辑个人资料弹窗 -->
+  <view class="modal" wx:if="{{showEditProfileModal}}">
+    <view class="modal-mask" bindtap="hideModal"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">编辑个人资料</text>
+        <text class="modal-close" bindtap="hideModal">×</text>
+      </view>
+      <view class="modal-body">
+        <view class="form-group">
+          <text class="label">昵称</text>
+          <input class="input" value="{{editNickname}}" bindinput="inputNickname" placeholder="请输入昵称"/>
+        </view>
+      </view>
+      <view class="modal-footer">
+        <button class="modal-cancel" bindtap="hideModal">取消</button>
+        <button class="modal-confirm" bindtap="updateProfile">确认</button>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 修改密码弹窗 -->
+  <view class="modal" wx:if="{{showPasswordModal}}">
+    <view class="modal-mask" bindtap="hideModal"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">修改密码</text>
+        <text class="modal-close" bindtap="hideModal">×</text>
+      </view>
+      <view class="modal-body">
+        <view class="form-group">
+          <text class="label">原密码</text>
+          <input class="input" password value="{{oldPassword}}" bindinput="inputOldPassword" placeholder="请输入原密码"/>
+        </view>
+        <view class="form-group">
+          <text class="label">新密码</text>
+          <input class="input" password value="{{newPassword}}" bindinput="inputNewPassword" placeholder="请输入新密码"/>
+        </view>
+        <view class="form-group">
+          <text class="label">确认密码</text>
+          <input class="input" password value="{{confirmPassword}}" bindinput="inputConfirmPassword" placeholder="请再次输入新密码"/>
+        </view>
+      </view>
+      <view class="modal-footer">
+        <button class="modal-cancel" bindtap="hideModal">取消</button>
+        <button class="modal-confirm" bindtap="changePassword">确认</button>
+      </view>
+    </view>
+  </view>
+</view>

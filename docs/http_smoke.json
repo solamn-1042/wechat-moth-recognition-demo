@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-16",
+  "upload_status": 200,
+  "result_status": 200,
+  "result_bytes": 392126,
+  "elapsed_ms": 14470.72,
+  "detections": [
+    {
+      "confidence": 0.8630468249320984,
+      "class": "草地贪夜蛾"
+    }
+  ],
+  "scope": "Real Java HTTP to Flask checkpoint inference and result download; anonymous request, no database history or WeChat device flow"
+}

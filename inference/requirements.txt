@@ -1,0 +1,5 @@
+Flask==3.1.2
+ultralytics==8.3.107
+timm>=1.0,<2
+einops>=0.8,<1
+dill==0.4.1
