@@ -1,0 +1,15 @@
+{
+  "source_image": "miniapp/pages/data/spodoptera_frugiperda.jpg",
+  "method": "Flask test client with repository checkpoint on CPU; not a WeChat end-to-end test",
+  "detections": [
+    {
+      "class": "草地贪夜蛾",
+      "confidence": 0.8630468249320984
+    }
+  ],
+  "main_detection": {
+    "class": "草地贪夜蛾",
+    "confidence": 0.8630468249320984
+  },
+  "result_image": "docs/images/inference-sample.jpg"
+}

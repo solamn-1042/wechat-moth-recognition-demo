@@ -1,0 +1,40 @@
+{
+  "renderer": "Browser adaptation of WXML/WXSS and initial Page.data; no WeChat login, camera or network runtime",
+  "screens": [
+    {
+      "name": "home",
+      "width": 390,
+      "height": 844,
+      "image": "home.png",
+      "source": "miniapp/pages/index"
+    },
+    {
+      "name": "upload",
+      "width": 390,
+      "height": 844,
+      "image": "upload.png",
+      "source": "miniapp/pages/upload"
+    },
+    {
+      "name": "result",
+      "width": 390,
+      "height": 844,
+      "image": "result.png",
+      "source": "miniapp/pages/upload"
+    },
+    {
+      "name": "knowledge",
+      "width": 390,
+      "height": 844,
+      "image": "knowledge.png",
+      "source": "miniapp/pages/moth-info"
+    },
+    {
+      "name": "login",
+      "width": 390,
+      "height": 844,
+      "image": "login.png",
+      "source": "miniapp/pages/login"
+    }
+  ]
+}
